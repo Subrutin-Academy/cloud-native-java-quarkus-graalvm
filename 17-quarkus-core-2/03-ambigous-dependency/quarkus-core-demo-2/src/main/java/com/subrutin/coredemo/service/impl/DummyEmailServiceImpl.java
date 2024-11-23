@@ -7,12 +7,10 @@ import jakarta.enterprise.inject.Default;
 
 @ApplicationScoped
 public class DummyEmailServiceImpl implements EmailService {
-
     @Override
     public void sendMail(String destinationAddress, String mailSubject, String messageContent) throws Exception {
-        Log.info("destination address:"+destinationAddress);
-        Log.info("Mail Subject:"+mailSubject);
-        Log.info("Content:"+messageContent);
-
+        Log.info("Email Address:"+destinationAddress);
+        Log.info("Email Subject:"+mailSubject);
+        Log.info("Message Content:"+messageContent);
     }
 }
