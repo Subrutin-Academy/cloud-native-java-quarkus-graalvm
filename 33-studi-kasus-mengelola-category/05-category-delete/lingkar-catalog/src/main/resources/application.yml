@@ -1,0 +1,14 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    jdbc:
+      url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  hibernate-orm:
+    database:
+      generation: update
+    log:
+      sql: true
+  swagger-ui:
+    always-include: true

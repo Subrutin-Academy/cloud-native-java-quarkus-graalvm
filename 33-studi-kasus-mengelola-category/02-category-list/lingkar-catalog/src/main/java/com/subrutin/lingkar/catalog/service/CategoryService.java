@@ -1,0 +1,19 @@
+package com.subrutin.lingkar.catalog.service;
+
+import com.subrutin.lingkar.catalog.web.dto.CategoryCreateRequestDTO;
+import com.subrutin.lingkar.catalog.web.dto.CategoryListResponseDTO;
+import com.subrutin.lingkar.catalog.web.dto.ResultPageResponseDTO;
+
+public interface CategoryService {
+
+    public void createCategory(CategoryCreateRequestDTO dto);
+
+    public ResultPageResponseDTO<CategoryListResponseDTO> findCategoryList(
+        Integer pages,
+        Integer limit,
+        String sortBy,
+        String direction,
+        String categoryName
+    );
+
+}

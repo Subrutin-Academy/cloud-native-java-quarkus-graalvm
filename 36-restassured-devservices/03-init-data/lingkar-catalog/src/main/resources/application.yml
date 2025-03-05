@@ -1,0 +1,33 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    jdbc:
+      url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  hibernate-orm:
+    database:
+      generation: update
+    log:
+      sql: true
+  swagger-ui:
+    always-include: true
+"%test":
+  quarkus:
+    datasource:
+      db-kind: postgresql
+      jdbc:
+        url: jdbc:postgresql://localhost:5433/lingkar_test
+      username: subrutin
+      password: subrutin   
+      devservices:
+        enabled: true
+        port: 5433
+        db-name: lingkar_test
+        username: subrutin
+        password: subrutin
+        image-name: postgres:15.3
+    hibernate-orm:
+      database:
+        generation: drop-and-create
+      sql-load-script: import-local.sql  
